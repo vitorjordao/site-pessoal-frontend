@@ -1,0 +1,42 @@
+/*CORES*/
+:root {
+    --primary-color: rgb(240, 240, 240);
+    --secondary-color: rgb(90, 180, 221);
+    --tertiary-color: rgb(255, 255, 255);
+    --primary-button-color: rgb(255, 255, 255);
+    --primary-button-color-hover: rgb(90, 180, 221);
+    --primary-text-color: rgb(90, 180, 221);
+    --secondary-text-color: rgb(240, 240, 240);
+
+    --border-radius-1: 3%;
+    --border-radius-2: 10%;
+    
+    color: var(--primary-text-color);
+    font-weight: bolder;
+}
+
+body {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-rows: auto auto 5em;
+    grid-template-areas: 
+    "header" 
+    "main"
+    "footer";
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+a {
+    text-decoration: none;
+}

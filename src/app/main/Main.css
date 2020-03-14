@@ -1,0 +1,15 @@
+main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 5em auto;
+}
+
+main section:nth-child(1) {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+main section:nth-child(2) {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
