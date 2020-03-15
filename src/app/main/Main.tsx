@@ -9,8 +9,9 @@ function Main() {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Articles} />
-                <Route exact path="/articles" component={Articles} />
-                <Route exact path="/login" component={Login} />
+                <Route exact path="/site-pessoal-frontend/" component={Articles} />
+                <Route exact path="/site-pessoal-frontend/articles" component={Articles} />
+                <Route exact path="/site-pessoal-frontend/login" component={Login} />
                 {/* <ProtectedRoute exact path="/flux-control-front/" component={LandingPage} /> */}
                 <Route path="*" component={() => <></>} />
             </Switch>
