@@ -10,9 +10,8 @@ function Header() {
                     <BrowserRouter>
                         <Switch>
                             <Route exact path="/" component={() => <h1>Artigos</h1>} />
-                            <Route exact path="/site-pessoal-frontend/" component={() => <h1>Artigos</h1>} />
-                            <Route exact path="/site-pessoal-frontend/articles" component={() => <h1>Artigos</h1>} />
-                            <Route exact path="/site-pessoal-frontend/login" component={() => <h1>Login</h1>} />
+                            <Route exact path="/articles" component={() => <h1>Artigos</h1>} />
+                            <Route exact path="/login" component={() => <h1>Login</h1>} />
                             <Route path="*" component={() => <h1>Página não encontrada</h1>} />
                         </Switch>
                     </BrowserRouter>
@@ -20,9 +19,9 @@ function Header() {
                 <section className="central-links">
                     <nav>
                         <ul>
-                            <a href="/site-pessoal-frontend/"><li>Quem eu sou</li></a>
-                            <a href="/site-pessoal-frontend/"><li>Portifólio</li></a>
-                            <a href="/site-pessoal-frontend/articles"><li>Artigos</li></a>
+                            <a href="/"><li>Quem eu sou</li></a>
+                            <a href="/"><li>Portifólio</li></a>
+                            <a href="/articles"><li>Artigos</li></a>
                         </ul>
                     </nav>
                 </section>
