@@ -4,7 +4,8 @@ import { Verify as LoginVerify } from './LoginRequest';
 
 function Login() {
 
-    async function login() {
+    async function login(event: React.MouseEvent) {
+        event.preventDefault();
         const login = "";
         const password = "";
 

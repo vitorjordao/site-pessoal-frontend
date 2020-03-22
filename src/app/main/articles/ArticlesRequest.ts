@@ -9,9 +9,9 @@ export interface Articles {
 }
 
 async function Get(type: string): Promise<[Articles]> {
-    const response = await fetch(`#my-url/articles?page=${page}&type=${type}`);
+    const response = await fetch(`https://vitorjordao.herokuapp.com/portifolio/articles?page=${page}&type=${type}`, { mode: 'no-cors' });
     page += 1;
-    return await response?.json();
+    return response?.json();
 }
 
 export { Get };
