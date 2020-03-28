@@ -1,8 +1,10 @@
 import React from 'react';
 import './Main.css';
-import Articles from './articles/Articles'
-import Login from './login/Login'
+import Articles from './articles/Articles';
+import Login from './login/Login';
+import Admin from './admin/Admin';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { ProtectedRoute } from './login/ProtectedRoute';
 
 function Main() {
     return (
@@ -11,7 +13,7 @@ function Main() {
                 <Route exact path="/" component={Articles} />
                 <Route exact path="/articles" component={Articles} />
                 <Route exact path="/login" component={Login} />
-                {/* <ProtectedRoute exact path="/flux-control-front/" component={LandingPage} /> */}
+                <ProtectedRoute exact path="/admin" component={Admin} />
                 <Route path="*" component={() => <></>} />
             </Switch>
         </BrowserRouter>

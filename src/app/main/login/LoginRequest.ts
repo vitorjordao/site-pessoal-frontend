@@ -1,13 +1,28 @@
+import url from '../../../url-base';
+
+let auth = "";
+
+interface Bearer {
+    type: string;
+    token: string;
+}
+
 async function Verify(login: string, password: string) {
-    const response = await fetch(`https://vitorjordao.herokuapp.com/auth`, {
+    const response = await fetch(`${url}auth`, {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'cors',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ login, password })
     });
-    return await response.ok ? response.json() : "";
+
+    if (response.ok) {
+        const bearer: Bearer = await response.json();
+        auth = bearer.type + " " + bearer.token;
+    } else auth = "";
+
+    return response.status;
 }
 
-export { Verify };
+export { Verify, auth };

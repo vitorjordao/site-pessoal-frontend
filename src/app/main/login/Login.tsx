@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import './Login.css';
 import { Verify as LoginVerify } from './LoginRequest';
 
 function Login() {
+    const [errorMessage, setErrorMessage] = useState<string>();
+    const history = useHistory();
 
-    async function login(event: React.MouseEvent) {
+    async function login(event: any) {
         event.preventDefault();
-        const login = "";
-        const password = "";
+
+        const login: string = event.target.form[0].value;
+        const password: string = event.target.form[1].value;
 
         const response = await LoginVerify(login, password);
 
-        if (!response) return;
+        if (!response || response === 400) {
+            setErrorMessage("Login ou senha errados");
+            return;
+        }
 
-        console.log(response);
+        setErrorMessage("");
+        history.push("/admin");
 
     };
 
@@ -31,6 +39,7 @@ function Login() {
                 <div className="login-button">
                     <button onClick={login}>Login</button>
                 </div>
+                <span>{errorMessage}</span>
             </form>
         </main>
     );

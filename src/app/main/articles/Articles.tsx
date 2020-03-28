@@ -7,7 +7,7 @@ function Articles() {
     const [articles, setArticles] = useState<[TypeArticles]>();
 
     (async () => {
-        const response = await ArticlesGet("PORTIFOLIO");
+        const response = await ArticlesGet("PORTFOLIO");
         setArticles(response);
     })();
 
