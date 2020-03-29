@@ -1,22 +1,47 @@
 import React from 'react';
 import './Main.css';
+import { useDispatch } from "react-redux";
+import { selectTitle } from '../../store/ducks/title/actions';
 import Articles from './articles/Articles';
+import Article from './articles/article/Article';
 import Login from './login/Login';
 import Admin from './admin/Admin';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { ProtectedRoute } from './login/ProtectedRoute';
 
 function Main() {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={Articles} />
-                <Route exact path="/articles" component={Articles} />
-                <Route exact path="/login" component={Login} />
-                <ProtectedRoute exact path="/admin" component={Admin} />
-                <Route path="*" component={() => <></>} />
-            </Switch>
-        </BrowserRouter>
+        <Switch>
+            <Route exact path="/" component={
+                (props: any) => <Prepare title="Home" component={<Articles />} params={props} />
+            } />
+            <Route exact path="/articles" component={
+                (props: any) => <Prepare title="Articles" component={<Articles />} params={props} />
+            } />
+            <Route exact path="/article/:url" component={
+                (props: any) => <Prepare title="" component={<Article />} params={props} />
+            } />
+            <Route exact path="/login" component={
+                (props: any) => <Prepare title="Login" component={<Login />} params={props} />
+            } />
+            <ProtectedRoute exact path="/admin" component={
+                (props: any) => <Prepare title="Admin" component={<Admin />} params={props} />
+            } />
+            <Route path="*" component={
+                (props: any) => <Prepare title="Not Found" component={<></>} params={props} />
+            } />
+        </Switch>
+    );
+}
+
+function Prepare(props: { title: string, component: JSX.Element, params: any }) {
+    const dispatch = useDispatch();
+    const Component = props.component;
+    if (props.title)
+        dispatch(selectTitle({ data: props.title }));
+
+    return (
+        { ...Component, props: props.params }
     );
 }
 

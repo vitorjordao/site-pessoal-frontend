@@ -1,16 +1,18 @@
 /*CORES*/
+
 :root {
     --primary-color: rgb(240, 240, 240);
     --secondary-color: rgb(90, 180, 221);
     --tertiary-color: rgb(255, 255, 255);
-    --primary-button-color: rgb(255, 255, 255);
-    --primary-button-color-hover: rgb(90, 180, 221);
-    --primary-text-color: rgb(90, 180, 221);
-    --secondary-text-color: rgb(240, 240, 240);
-
+    --primary-button-color: var(--tertiary-color);
+    --primary-button-color-hover: var(--secondary-color);
+    --primary-text-color: var(--secondary-color);
+    --secondary-text-color: var(--primary-color);
+    --tertiary-text-color: var(--tertiary-color);
     --border-radius-1: 3%;
     --border-radius-2: 10%;
-    
+    --border-radius-3: 1em;
+    --border-radius-4: 0.3em;
     color: var(--primary-text-color);
     font-weight: bolder;
 }
@@ -19,10 +21,7 @@ body {
     background-color: var(--primary-color);
     display: grid;
     grid-template-rows: auto auto 5em;
-    grid-template-areas: 
-    "header" 
-    "main"
-    "footer";
+    grid-template-areas: "header" "main" "footer";
 }
 
 header {

@@ -3,22 +3,30 @@ import { auth } from '../login/LoginRequest';
 
 export let page = 0;
 
-export interface Articles {
+export interface Article {
     url: string;
     name: string;
     imgDescription: string;
     description: string;
     image: string;
+    article: string;
+    tags: string[];
+    type: string;
+    language: string;
+    publicationDate: string;
 }
 
-async function Get(type: string): Promise<[Articles]> {
-    const response = await fetch(`${url}portifolio/articles?page=${page}&type=${type}`, { mode: 'no-cors' });
-    page += 1;
+function changePage(newPage: number) {
+    page = newPage;
+}
+
+async function Get(type: string): Promise<[Article]> {
+    const response = await fetch(`${url}articles?page=${page}&type=${type}`, {});
     return response?.json();
 }
 
-async function Set(article: Articles): Promise<boolean> {
-    const response = await fetch(`${url}portifolio/article`,
+async function Set(article: Article): Promise<boolean> {
+    const response = await fetch(`${url}article`,
         {
             body: JSON.stringify(article),
             method: "POST",
@@ -31,11 +39,11 @@ async function Set(article: Articles): Promise<boolean> {
 
     if (response.status === 403) {
         alert("Deslogou");
-    }else if(response.status) {
+    } else if (response.status === 500) {
         alert("Ocorreu um erro");
     }
 
     return response.status === 202;
 }
 
-export { Get, Set };
+export { Get, Set, changePage };
