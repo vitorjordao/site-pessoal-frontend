@@ -22,7 +22,7 @@ jobs:
       run: |
         git config --global user.email ${{secrets.GITHUB_EMAIL}}
         git config --global user.name ${{secrets.GITHUB_USERNAME}}
-        git remote set-url origin https://${{secrets.GITHUB_PESONAL_ACCESS_TOKEN}}@github.com/${{secrets.GITHUB_USERNAME}}/flux-control-front.git
+        git remote set-url origin https://${{secrets.GITHUB_PESONAL_ACCESS_TOKEN}}@github.com/${{secrets.GITHUB_USERNAME}}/vitorjordao.github.io.git
     - name: Deploy to GH Pages
       run: |
         sudo yarn
