@@ -6,6 +6,7 @@ import Articles from './articles/Articles';
 import Article from './articles/article/Article';
 import Login from './login/Login';
 import Admin from './admin/Admin';
+import About from './about/About';
 import { Route, Switch } from "react-router-dom";
 import { ProtectedRoute } from './login/ProtectedRoute';
 
@@ -13,10 +14,10 @@ function Main() {
     return (
         <Switch>
             <Route exact path="/" component={
-                (props: any) => <Prepare title="Home" component={<Articles />} params={props} />
+                (props: any) => <Prepare title="Sobre mim" component={<About />} params={props} />
             } />
             <Route exact path="/articles" component={
-                (props: any) => <Prepare title="Articles" component={<Articles />} params={props} />
+                (props: any) => <Prepare title="Artigos" component={<Articles />} params={props} />
             } />
             <Route exact path="/article/:url" component={
                 (props: any) => <Prepare title="" component={<Article />} params={props} />

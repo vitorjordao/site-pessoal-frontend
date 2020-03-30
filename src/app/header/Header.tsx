@@ -19,7 +19,6 @@ function Header() {
                     <nav>
                         <ul>
                             <Link to="/"><li>Quem eu sou</li></Link>
-                            <Link to="/"><li>Portifólio</li></Link>
                             <Link to="/articles"><li>Artigos</li></Link>
                         </ul>
                     </nav>

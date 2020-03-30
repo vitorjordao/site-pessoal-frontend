@@ -1,0 +1,43 @@
+.about {
+    margin: 1em;
+    padding: 1em;
+    background-color: var(--tertiary-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: var(--border-radius-4);
+    height: min-content;
+}
+
+.about h2 {
+    font-size: 2em;
+}
+
+.about div {
+    margin: 1em;
+    text-align: justify;
+    width: 100%;
+    margin: 1em;
+}
+
+.about p {
+    font-size: 1.4em;
+    margin: 0.4em 0;
+}
+
+.image {
+    max-width: 65%;
+    max-height: 30em;
+    border-radius: 1em;
+}
+
+.image-1 {
+    float: left;
+    margin-right: 2em;
+}
+
+.image-2 {
+    float: right;
+    margin-left: 2em;
+}
