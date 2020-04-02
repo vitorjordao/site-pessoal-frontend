@@ -5,8 +5,11 @@ import { selectTitle } from '../../store/ducks/title/actions';
 import Articles from './articles/Articles';
 import Article from './articles/article/Article';
 import Login from './login/Login';
-import Admin from './admin/Admin';
 import About from './about/About';
+import Admin from './admin/Admin';
+import Create from './admin/article/create/Create';
+import Update from './admin/article/update/Update';
+import List from './admin/article/list/List';
 import { Route, Switch } from "react-router-dom";
 import { ProtectedRoute } from './login/ProtectedRoute';
 
@@ -27,6 +30,15 @@ function Main() {
             } />
             <ProtectedRoute exact path="/admin" component={
                 (props: any) => <Prepare title="Admin" component={<Admin />} params={props} />
+            } />
+            <ProtectedRoute exact path="/admin/article/create" component={
+                (props: any) => <Prepare title="Article create" component={<Create />} params={props} />
+            } />
+            <ProtectedRoute exact path="/admin/article/list" component={
+                (props: any) => <Prepare title="Article list" component={<List />} params={props} />
+            } />
+            <ProtectedRoute exact path="/admin/article/update" component={
+                (props: any) => <Prepare title="Article update" component={<Update />} params={props} />
             } />
             <Route path="*" component={
                 (props: any) => <Prepare title="Not Found" component={<></>} params={props} />

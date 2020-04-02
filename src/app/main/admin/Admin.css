@@ -6,19 +6,3 @@
     justify-content: center;
     text-align: center;
 }
-
-.create-article {
-    width: 100%;
-    padding: 1em;
-}
-
-.field {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 1em 0 1em 0;
-}
-
-.field>textarea {
-    height: 30em;
-}

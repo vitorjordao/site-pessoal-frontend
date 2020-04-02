@@ -14,6 +14,7 @@ export interface Article {
     type: string;
     language: string;
     publicationDate: string;
+    publishable: boolean;
 }
 
 function changePage(newPage: number) {
@@ -46,4 +47,60 @@ async function Set(article: Article): Promise<boolean> {
     return response.status === 202;
 }
 
-export { Get, Set, changePage };
+async function Delete(id: string) {
+    const response = await fetch(`${url}article?url=${id}`,
+        {
+            method: "DELETE",
+            headers: {
+                Authorization: auth,
+            }
+        }
+    );
+
+    if (response.status === 403) {
+        alert("Deslogou");
+    } else if (response.status === 500) {
+        alert("Ocorreu um erro");
+    }
+
+    return response.status === 202;
+}
+
+async function Edit(article: Article) {
+
+    const response = await fetch(`${url}article`, {
+        body: JSON.stringify(article),
+        method: "PUT",
+        headers: {
+            Authorization: auth,
+            'Content-Type': 'application/json',
+        }
+    }
+    );
+
+    if (response.status === 403) {
+        alert("Deslogou");
+    } else if (response.status === 500) {
+        alert("Ocorreu um erro");
+    }
+
+    return response.status === 202;
+}
+
+async function GetAll(): Promise<[Article]> {
+    const response = await fetch(`${url}articles/all`, {
+        headers: {
+            Authorization: auth,
+        }
+    });
+
+    if (response.status === 403) {
+        alert("Deslogou");
+    } else if (response.status === 500) {
+        alert("Ocorreu um erro");
+    }
+
+    return response?.json();
+}
+
+export { Delete, Edit, GetAll, Get, Set, changePage };
