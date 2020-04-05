@@ -52,16 +52,15 @@
 }
 
 .article-text {
-    margin-top: 10em;
+    margin-top: 2em;
     padding: 1em;
-    background-color: var(--article-background-color);
-    border-radius: var(--border-radius-4);
     min-width: 50%;
     max-width: 95%;
 }
 
 .article-text>* {
     margin: 1em 0 1em 0;
+    line-height: 1.4em;
 }
 
 .article-text h1 {
@@ -113,10 +112,4 @@
     padding: 0.5em;
     border: 3px solid var(--secondary-color);
     border-radius: var(--border-radius-4);
-}
-
-.article-text a {
-    color: var(--tertiary-text-color);
-    text-decoration: double;
-    text-shadow: 1px 0 0 var(--primary-text-color), -1px 0 0 var(--primary-text-color), 0 1px 0 var(--primary-text-color), 0 -1px 0 var(--primary-text-color), 1px 1px var(--primary-text-color), -1px -1px 0 var(--primary-text-color), 1px -1px 0 var(--primary-text-color), -1px 1px 0 var(--primary-text-color);
 }

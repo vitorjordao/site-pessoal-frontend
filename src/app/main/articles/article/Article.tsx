@@ -40,7 +40,13 @@ function Article(props: any) {
                 <div className="datails__separator">
                     <span className="language">{article?.language}</span>
                     <span className="type">{article?.type}</span>
-                    <span>Tags: <span className="tags">{article?.tags.reduce(tag => tag + " ")}</span></span>
+                    <span>Tags:
+                        <span className="tags">
+                            {
+                                article?.tags.reduce(tag => tag + ", ")
+                            }
+                        </span>
+                    </span>
                 </div>
             </section>
             <section className="article-main">
