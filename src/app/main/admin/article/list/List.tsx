@@ -27,9 +27,13 @@ function List() {
     history.push('/admin/article/update');
   }
 
+  function goTo(url: string) {
+    history.push(`/article/${url}`);
+  }
+
   return (
     <main className="articles">
-      <button onClick={()=>history.goBack()}>Voltar</button>
+      <button onClick={() => history.goBack()}>Voltar</button>
       <section className="display">
         {articles?.map((article) =>
           <article className="display__article" key={article.url}>
@@ -39,8 +43,9 @@ function List() {
               <figcaption>{article?.imgDescription}</figcaption>
             </figure>
             <p>{article?.description}</p>
-            <button onClick={() => edit(article)}>Editar</button>
-            <button onClick={() => del(article.url)}>Deletar</button>
+            <button onClick={() => edit(article)}>Editing</button>
+            <button onClick={() => del(article.url)}>Delete</button>
+            <button onClick={() => goTo(article.url)}>View</button>
           </article>
         )}
 
