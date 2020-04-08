@@ -31,12 +31,12 @@ function Articles() {
         const value = event.currentTarget.form[0].value;
 
         //eu não desejo que essa página seja invisível, até por que o código é open source
-        if(value === "meulogin") {
+        if (value === "meulogin") {
             history.push("/login");
             return;
         }
 
-        if(allArticles){
+        if (allArticles) {
             const filtered = allArticles.filter(article => article.name.includes(value));
             setArticles(filtered);
         }
@@ -55,9 +55,8 @@ function Articles() {
                         <h2>{article?.name}</h2>
                         <figure>
                             <img srcSet={`${article?.image}`} src={`/images/blog.png`} alt={article?.imgDescription} />
-                            <figcaption>{article?.imgDescription}</figcaption>
+                            <figcaption>{article?.description}</figcaption>
                         </figure>
-                        <p>{article?.description}</p>
                     </article>
                 )}
 

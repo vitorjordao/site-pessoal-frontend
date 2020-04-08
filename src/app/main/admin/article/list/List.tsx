@@ -40,9 +40,8 @@ function List() {
             <h2>{article?.name}</h2>
             <figure>
               <img srcSet={`${article?.image}`} src={`/images/blog.png`} alt={article?.imgDescription} />
-              <figcaption>{article?.imgDescription}</figcaption>
+              <figcaption>{article?.description}</figcaption>
             </figure>
-            <p>{article?.description}</p>
             <button onClick={() => edit(article)}>Editing</button>
             <button onClick={() => del(article.url)}>Delete</button>
             <button onClick={() => goTo(article.url)}>View</button>
