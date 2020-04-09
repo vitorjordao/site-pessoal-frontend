@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { selectTitle } from '../../../../store/ducks/title/actions';
 import { Article as TypeArticle } from '../ArticlesRequest';
 import { Get } from './ArticleRequest';
+import { DiscussionEmbed } from 'disqus-react';
 
 function Article(props: any) {
     const dispatch = useDispatch();
@@ -58,6 +59,18 @@ function Article(props: any) {
                 <article className="article-text">
                     <ReactMarkdown escapeHtml={false} source={article?.article} />
                 </article>
+            </section>
+            <section className="article-comments">
+                <DiscussionEmbed
+                    shortname='vitorjordao'
+                    config={
+                        {
+                            url: "https://www.vitorjordao.dev/#" + article.url,
+                            identifier: article.url,
+                            title: article.name,
+                        }
+                    }
+                />
             </section>
         </main>
     );
