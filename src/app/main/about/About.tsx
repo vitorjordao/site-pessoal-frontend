@@ -8,7 +8,7 @@ function About() {
             <div>
                 <img alt="Vitor Jordão no Clojure South 2019" className="image image-1" src="/images/eu-clojure-south.jpg" />
                 <p>Hey! Como vai?</p>
-                <p>Meu nome é vitor Jordão <span className="emoji" role="img" aria-label="Emoji de joinha">👍</span></p>
+                <p>Meu nome é Vitor Jordão <span className="emoji" role="img" aria-label="Emoji de joinha">👍</span></p>
             </div>
             <div>
                 <p>Comecei a programar em 2016 em uma <a target="_blank" rel="noopener noreferrer" href="https://github.com/vitorjordao/Macros-de-minecraft">linguagem de programação feita para automatizar rotinas no minecraft</a> e desde lá nunca mais parei de estudar e aprender!</p>
@@ -24,7 +24,7 @@ function About() {
                 <p>Amo aprender novas linguagens e tecnologias, acumulando algumas com um nível de conhecimento suficiente para trabalhar, como Java, JavaScript, Clojure, ClojureScript, C#, entre outras...</p>
             </div>
             <div>
-                <p>Preso muito pelo crescimento de novas comunidades da área, e estou sempre disposto a participar de eventos relacionados!</p>
+                <p>Prezo muito pelo crescimento de novas comunidades da área, e estou sempre disposto a participar de eventos relacionados!</p>
                 <img alt="Vitor Jordão no evento IA Rio Preto" className="image image-1" src="/images/eu-e-comunidade.jpg" />
             </div>
         </main>
