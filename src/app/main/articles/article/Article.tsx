@@ -16,9 +16,12 @@ function Article(props: any) {
 
     (async () => {
         if (!article) {
-            const article = await Get(props?.match?.params?.url || "");
-            if (article)
-                setArticle(article);
+            const theArticle = await Get(props?.match?.params?.url || "");
+            if (theArticle){
+                let metaList: any = document.getElementsByTagName('meta');
+                metaList.description.content = theArticle.description;
+                setArticle(theArticle);
+            }
             else
                 dispatch(selectTitle({ data: "Artigo não encontrado" }));
         }
@@ -29,8 +32,6 @@ function Article(props: any) {
 
     return (
         <main className="article">
-            <meta name="author" content="Vitor Jordão" />
-            <meta name="description" content={article?.description} />
             <section className="details">
                 <div className="datails__separator">
                     <time dateTime={article?.publicationDate}>
