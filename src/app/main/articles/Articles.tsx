@@ -57,6 +57,7 @@ function Articles() {
                             <img srcSet={`${article?.image}`} src={`/images/blog.png`} alt={article?.imgDescription} />
                             <figcaption>{article?.description}</figcaption>
                         </figure>
+                        <div />
                     </article>
                 )}
 

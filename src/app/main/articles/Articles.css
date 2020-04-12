@@ -47,16 +47,17 @@
 }
 
 @media (max-width: 700px) {
-    .articles .display{
+    .articles .display {
         justify-content: center;
     }
-    
     .display__article {
         width: calc(90vw - 3rem);
     }
 }
 
+
 /* Search */
+
 .articles .search form {
     height: 3rem;
     display: flex;
@@ -109,7 +110,6 @@
     .articles .search form {
         justify-content: center;
     }
-
     .articles .search .text_find {
         width: calc(80% - 3rem);
         margin-left: unset;
