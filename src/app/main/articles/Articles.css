@@ -83,9 +83,29 @@
     color: var(--secondary-text-color);
 }
 
+.search-icon {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.search-icon:before {
+    content: "\f002";
+}
+
 .articles .search .text_find {
     margin-left: auto;
     border-radius: var(--border-radius-1) 0 0 var(--border-radius-1);
+}
+
+.search-input-label {
+    opacity: 0;
 }
 
 .load-articles {

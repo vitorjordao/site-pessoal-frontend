@@ -46,7 +46,8 @@ function Articles() {
         <main className="articles">
             <section className="search">
                 <form>
-                    <input type="text" placeholder="Pesquisar" className="text_find" /><button type="submit" className="button_find" onClick={find}><i className="fas fa-search"></i></button>
+                    <label className="search-input-label" htmlFor="search">Campo de perquisa dos artigos</label>
+                    <input id="search" type="text" placeholder="Pesquisar" className="text_find" /><button type="submit" className="button_find" onClick={find} aria-label="Pesquisar"><i className="search-icon"></i></button>
                 </form>
             </section>
             <section className="display">

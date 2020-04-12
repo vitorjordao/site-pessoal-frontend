@@ -2,7 +2,7 @@
 
 :root {
     --primary-color: rgb(240, 240, 240);
-    --secondary-color: rgb(90, 180, 221);
+    --secondary-color: rgb(14, 85, 179);
     --tertiary-color: rgb(255, 255, 255);
     --primary-button-color: var(--tertiary-color);
     --primary-button-color-hover: var(--secondary-color);
@@ -15,6 +15,10 @@
     --border-radius-4: 0.3em;
     color: var(--primary-text-color);
     font-weight: bolder;
+}
+
+::placeholder {
+    color: var(--secondary-color);
 }
 
 body {

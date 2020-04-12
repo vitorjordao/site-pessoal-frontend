@@ -1,20 +1,18 @@
-header nav ul li {
+header nav a {
     background-color: var(--secondary-color);
     padding: 1em;
-    border-right: 0.3em;
-    border-color: var(--tertiary-color);
-    border-bottom: 0.3em;
-    border-bottom-color: var(--secondary-color);
-    border-style: solid;
+    border-color: var(--secondary-color);
+    border-width: 0 0.3em 0.3em 0;
+    border-bottom-style: solid;
     color: var(--secondary-text-color);
     font-weight: bold;
 }
 
-header nav ul li:hover {
-    border-color: var(--tertiary-color);
+header nav a:hover {
+    border-bottom-color: var(--tertiary-color);
 }
 
-header nav ul li:last-child {
+header nav a:last-child {
     border-right: 0;
 }
 
@@ -35,7 +33,7 @@ header .title {
     padding: 3em;
 }
 
-header nav ul {
+header nav {
     display: flex;
 }
 

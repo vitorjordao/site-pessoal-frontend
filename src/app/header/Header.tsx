@@ -17,10 +17,8 @@ function Header() {
                 </section>
                 <section className="central-links">
                     <nav>
-                        <ul>
-                            <Link to="/"><li>Quem eu sou</li></Link>
-                            <Link to="/articles"><li>Artigos</li></Link>
-                        </ul>
+                        <Link to="/">Quem eu sou</Link>
+                        <Link to="/articles">Artigos</Link>
                     </nav>
                 </section>
             </div>
