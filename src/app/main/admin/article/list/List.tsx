@@ -38,7 +38,7 @@ function List() {
         {articles?.map((article) =>
           <article className="display__article" key={article.url}>
             <h2>{article?.name}</h2>
-            <figure>
+            <figure style={{maxHeight: "80%"}}>
               <img srcSet={`${article?.image}`} src={`/images/blog.png`} alt={article?.imgDescription} />
               <figcaption>{article?.description}</figcaption>
             </figure>
