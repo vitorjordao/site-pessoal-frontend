@@ -29,39 +29,41 @@ function Article(props: any) {
 
   return (
     <main className="article">
-      <section className="details">
-        <div className="datails__separator">
+      <section className="article__details">
+        <div className="article__datails__separator">
           <time dateTime={article?.publicationDate}>
             Data de publicação - {article?.publicationDate}
           </time>
           <span className="author">Feito por - Vitor Jordão</span>
         </div>
-        <div className="datails__separator">
-          <span className="language">{article?.language}</span>
-          <span className="type">{article?.type}</span>
-          <span>
+        <div className="article__datails__separator">
+          <span className="separator__language">{article?.language}</span>
+          <span className="separator__type">{article?.type}</span>
+          <span className="separator__tags">
             Tags:
-            <span className="tags">
+            <span className="separator__tags__tag">
               {article?.tags.reduce((tag) => tag + ", ")}
             </span>
           </span>
         </div>
       </section>
-      <section className="article-main">
-        <blockquote className="description">{article?.description}</blockquote>
-        <figure className="article-main__image">
+      <section className="article__main">
+        <blockquote className="article__main__description">
+          {article?.description}
+        </blockquote>
+        <figure className="article__main__figure">
           <img
+            className="figure__image"
             srcSet={`${article?.image}`}
             src={`/images/blog.png`}
             alt={article?.imgDescription}
           />
-          <figcaption>{article?.imgDescription}</figcaption>
         </figure>
-        <article className="article-text">
+        <article className="article__main__text">
           <ReactMarkdown escapeHtml={false} source={article?.article} />
         </article>
       </section>
-      <section className="article-comments">
+      <section className="article__comments">
         <DiscussionEmbed
           shortname="vitorjordao"
           config={{
