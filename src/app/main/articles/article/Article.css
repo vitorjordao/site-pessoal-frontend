@@ -3,6 +3,7 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  width: calc(100vw - 2rem);
 }
 
 .article__details {
@@ -55,6 +56,7 @@
   margin-top: 2em;
   padding: 1em;
   max-width: 80vw;
+  word-break: break-word;
 }
 
 .article__main__text > * {
